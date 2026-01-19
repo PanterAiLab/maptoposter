@@ -1,0 +1,15 @@
+{
+  "name": "Vice City",
+  "description": "80s Miami nights - neon palms and fast cars",
+  "bg": "#1A0A2E",
+  "text": "#FF71CE",
+  "gradient_color": "#1A0A2E",
+  "water": "#150828",
+  "parks": "#201035",
+  "road_motorway": "#FF71CE",
+  "road_primary": "#01CDFE",
+  "road_secondary": "#01A8CC",
+  "road_tertiary": "#017799",
+  "road_residential": "#014D66",
+  "road_default": "#01A8CC"
+}
