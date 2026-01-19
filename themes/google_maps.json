@@ -1,0 +1,15 @@
+{
+  "name": "Google Maps",
+  "description": "Classic Google Maps style - familiar and clean",
+  "bg": "#F2F2F2",
+  "text": "#3C4043",
+  "gradient_color": "#F2F2F2",
+  "water": "#AADAFF",
+  "parks": "#C8E6C9",
+  "road_motorway": "#FFC107",
+  "road_primary": "#FFFFFF",
+  "road_secondary": "#FFFFFF",
+  "road_tertiary": "#FFFFFF",
+  "road_residential": "#FFFFFF",
+  "road_default": "#FFFFFF"
+}

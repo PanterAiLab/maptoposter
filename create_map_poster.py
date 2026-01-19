@@ -254,7 +254,9 @@ def create_poster(city, country, point, dist, output_file):
     if water is not None and not water.empty:
         water.plot(ax=ax, facecolor=THEME['water'], edgecolor='none', zorder=1)
     if parks is not None and not parks.empty:
-        parks.plot(ax=ax, facecolor=THEME['parks'], edgecolor='none', zorder=2)
+        parks_polygons = parks[parks.geometry.type.isin(['Polygon', 'MultiPolygon'])]
+        if not parks_polygons.empty:
+            parks_polygons.plot(ax=ax, facecolor=THEME['parks'], edgecolor='none', zorder=2)
     
     # Layer 2: Roads with hierarchy coloring
     print("Applying road hierarchy colors...")
@@ -264,6 +266,7 @@ def create_poster(city, country, point, dist, output_file):
     ox.plot_graph(
         G, ax=ax, bgcolor=THEME['bg'],
         node_size=0,
+        node_color='none',
         edge_color=edge_colors,
         edge_linewidth=edge_widths,
         show=False, close=False
@@ -307,18 +310,18 @@ def create_poster(city, country, point, dist, output_file):
             color=THEME['text'], linewidth=1, zorder=11)
 
     # --- ATTRIBUTION (bottom right) ---
-    if FONTS:
-        font_attr = FontProperties(fname=FONTS['light'], size=8)
-    else:
-        font_attr = FontProperties(family='monospace', size=8)
-    
-    ax.text(0.98, 0.02, "© OpenStreetMap contributors", transform=ax.transAxes,
-            color=THEME['text'], alpha=0.5, ha='right', va='bottom', 
-            fontproperties=font_attr, zorder=11)
+    # if FONTS:
+    #     font_attr = FontProperties(fname=FONTS['light'], size=8)
+    # else:
+    #     font_attr = FontProperties(family='monospace', size=8)
+    # 
+    # ax.text(0.98, 0.02, "© OpenStreetMap contributors", transform=ax.transAxes,
+    #         color=THEME['text'], alpha=0.5, ha='right', va='bottom', 
+    #         fontproperties=font_attr, zorder=11)
 
     # 5. Save
     print(f"Saving to {output_file}...")
-    plt.savefig(output_file, dpi=300, facecolor=THEME['bg'])
+    plt.savefig(output_file, dpi=400, facecolor=THEME['bg'])
     plt.close()
     print(f"✓ Done! Poster saved as {output_file}")
 

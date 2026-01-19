@@ -1,0 +1,15 @@
+{
+  "name": "Fallout",
+  "description": "Pip-Boy terminal - nuclear wasteland aesthetic",
+  "bg": "#0C1008",
+  "text": "#1AFF80",
+  "gradient_color": "#0C1008",
+  "water": "#080C06",
+  "parks": "#10150D",
+  "road_motorway": "#1AFF80",
+  "road_primary": "#15CC66",
+  "road_secondary": "#10994D",
+  "road_tertiary": "#0B6633",
+  "road_residential": "#06331A",
+  "road_default": "#10994D"
+}
